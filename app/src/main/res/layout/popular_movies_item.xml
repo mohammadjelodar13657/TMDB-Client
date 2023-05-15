@@ -12,14 +12,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/popular_movies_item"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_margin="4dp"
+        android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.utils.widget.ImageFilterButton
-            android:id="@+id/imageFilterButton"
+        <ImageView
+            android:id="@+id/popular_movie_item_iv"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:background="@color/purple_700"
-            android:contentDescription="@string/popular_movies_item_view"
+            android:contentDescription="@string/popular_movies_image_view"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -31,12 +31,11 @@
             android:text="@{popularMovie.title}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageFilterButton" />
+            app:layout_constraintTop_toBottomOf="@+id/popular_movie_item_iv" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="392dp"
             android:text="@{popularMovie.popularity.toString()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
