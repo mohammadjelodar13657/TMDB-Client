@@ -9,9 +9,10 @@ import com.example.tmdbclient.data.repository.remote.popularmovie.PopularMovieRe
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @HiltViewModel
-class PopularMoviesViewModel(private val popularMovieRepository: PopularMovieRepository): ViewModel() {
+class PopularMoviesViewModel @Inject constructor(private val popularMovieRepository: PopularMovieRepository): ViewModel() {
 
     private val _popularMoviesList = MutableLiveData<List<PopularMovie?>?>()
     val popularMoviesList: LiveData<List<PopularMovie?>?> = _popularMoviesList
