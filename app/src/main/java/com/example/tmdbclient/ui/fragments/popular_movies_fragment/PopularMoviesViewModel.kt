@@ -18,8 +18,9 @@ class PopularMoviesViewModel @Inject constructor(private val popularMovieReposit
     val popularMoviesList: LiveData<List<PopularMovie?>?> = _popularMoviesList
 
     fun getPopularMovies() {
-        viewModelScope.launch(IO) {
-            _popularMoviesList.value =  popularMovieRepository.getPopularMovies(1).popularMovies
+        viewModelScope.launch {
+            val popularMovies = popularMovieRepository.getPopularMovies(10).popularMovies
+            _popularMoviesList.value = popularMovies
         }
     }
 }
