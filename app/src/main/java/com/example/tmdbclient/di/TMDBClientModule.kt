@@ -1,6 +1,7 @@
 package com.example.tmdbclient.di
 
 import com.example.tmdbclient.data.remote.TMDBApi
+import com.example.tmdbclient.data.repository.remote.popularmovie.PopularMovieRepository
 import com.example.tmdbclient.util.Constants
 import dagger.Module
 import dagger.Provides
@@ -50,4 +51,10 @@ class TMDBClientModule {
     @Provides
     fun provideTMDBApi(retrofit: Retrofit): TMDBApi =
         retrofit.create(TMDBApi::class.java)
+
+    @Singleton
+    @Provides
+    fun providePopularMovieRepository(tmdbApi: TMDBApi): PopularMovieRepository {
+        return PopularMovieRepository(tmdbApi)
+    }
 }
