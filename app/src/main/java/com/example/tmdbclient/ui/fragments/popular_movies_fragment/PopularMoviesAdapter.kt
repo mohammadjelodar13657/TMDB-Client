@@ -37,7 +37,7 @@ class PopularMoviesAdapter: ListAdapter<PopularMovie, PopularMoviesAdapter.Popul
         holder.itemDataBinding.setVariable(BR.popularMovie, popularMovieItem)
 
         Glide.with(holder.itemDataBinding.root)
-            .load(popularMovieItem.posterPath)
+            .load("https://image.tmdb.org/t/p/w500${popularMovieItem.posterPath}")
             .into(holder.itemDataBinding.popularMovieItemIv)
     }
 }
