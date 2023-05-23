@@ -2,8 +2,8 @@ package com.example.tmdbclient.ui.fragments.popular_movies_fragment
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.tmdbclient.data.model.remote.movie_dto.Movie
@@ -11,8 +11,10 @@ import com.example.tmdbclient.databinding.MovieListItemBinding
 import com.example.tmdbclient.ui.OnMovieClickListener
 import com.example.tmdbclient.ui.SaveMovie
 
-class PopularMoviesAdapter(private val onMovieClickListener: OnMovieClickListener,
-                           private val saveMovie: SaveMovie): ListAdapter<Movie, PopularMoviesAdapter.PopularMoviesViewHolder>(DIFF_UTIL) {
+class PopularMoviesPagingAdapter(
+    private val onMovieClickListener: OnMovieClickListener,
+    private val saveMovie: SaveMovie
+): PagingDataAdapter<Movie, PopularMoviesPagingAdapter.PopularMoviesViewHolder>(DIFF_UTIL) {
 
     companion object {
         val DIFF_UTIL = object : DiffUtil.ItemCallback<Movie>() {
@@ -34,14 +36,14 @@ class PopularMoviesAdapter(private val onMovieClickListener: OnMovieClickListene
     }
 
     override fun onBindViewHolder(holder: PopularMoviesViewHolder, position: Int) {
-        val popularMovieItem = getItem(position)
+        val popularMovieItem = getItem(position)!!
 
         holder.popularItemDataBinding.apply {
             cardView.setOnClickListener {
                 onMovieClickListener.onMovieClick(popularMovieItem)
             }
             saveMovieItem.setOnClickListener {
-                saveMovie.saveMovie(popularMovieItem)
+                saveMovie.saveMovie(popularMovieItem!!)
             }
             movieTitle.text = popularMovieItem.title
             ratingBar.rating = popularMovieItem.voteAverage / 2

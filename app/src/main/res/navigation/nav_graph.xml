@@ -3,11 +3,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/popularMoviesFragment">
+    app:startDestination="@id/popularMovies">
 
     <fragment
-        android:id="@+id/popularMoviesFragment"
+        android:id="@+id/popularMovies"
         android:name="com.example.tmdbclient.ui.fragments.popular_movies_fragment.PopularMoviesFragment"
         android:label="PopularMoviesFragment"
-        tools:layout="@layout/fragment_popular_movies" />
+        tools:layout="@layout/fragment_popular_movies" >
+        <action
+            android:id="@+id/action_popularMovies_to_movieDetailsFragment"
+            app:destination="@id/movieDetailsFragment" >
+            <argument
+                android:name="movie_id"
+                app:argType="integer" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/upcomingMovies"
+        android:name="com.example.tmdbclient.ui.fragments.upcoming_movie_fragment.UpcomingMovieFragment"
+        android:label="UpcomingMovieFragment"
+        tools:layout="@layout/fragment_upcoming_movie">
+        <action
+            android:id="@+id/action_upcomingMovies_to_movieDetailsFragment"
+            app:destination="@id/movieDetailsFragment" >
+            <argument
+                android:name="movie_id"
+                app:argType="integer" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteMovies"
+        android:name="com.example.tmdbclient.ui.fragments.favorite_movies_fragmnet.FavoriteMoviesFragment"
+        android:label="FavoriteMoviesFragment"
+        tools:layout="@layout/fragment_favorite_movies"/>
+    <fragment
+        android:id="@+id/movieDetailsFragment"
+        android:name="com.example.tmdbclient.ui.fragments.movie_details_fragment.MovieDetailsFragment"
+        android:label="MovieDetailsFragment"
+        tools:layout="@layout/fragment_movie_details"/>
 </navigation>

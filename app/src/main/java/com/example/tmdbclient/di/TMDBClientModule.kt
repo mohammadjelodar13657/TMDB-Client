@@ -1,7 +1,11 @@
 package com.example.tmdbclient.di
 
+import android.app.Application
+import androidx.room.Room
+import com.example.tmdbclient.data.database.TMDBDataBase
+import com.example.tmdbclient.data.local.TMDBClientDao
 import com.example.tmdbclient.data.remote.TMDBApi
-import com.example.tmdbclient.data.repository.remote.popularmovie.PopularMovieRepository
+import com.example.tmdbclient.data.repository.remote.TMDBRepository
 import com.example.tmdbclient.util.Constants
 import dagger.Module
 import dagger.Provides
@@ -54,7 +58,20 @@ class TMDBClientModule {
 
     @Singleton
     @Provides
-    fun providePopularMovieRepository(tmdbApi: TMDBApi): PopularMovieRepository {
-        return PopularMovieRepository(tmdbApi)
+    fun provideDatabase(application: Application): TMDBDataBase {
+        return Room.databaseBuilder(application, TMDBDataBase::class.java, "tmdb_database").build()
     }
+
+    @Singleton
+    @Provides
+    fun provideDao(tmdbDataBase: TMDBDataBase): TMDBClientDao {
+        return tmdbDataBase.tmdbDao()
+    }
+
+    @Singleton
+    @Provides
+    fun provideTMDBRepository(tmdbApi: TMDBApi, tmdbClientDao: TMDBClientDao): TMDBRepository {
+        return TMDBRepository(tmdbApi, tmdbClientDao)
+    }
+
 }
