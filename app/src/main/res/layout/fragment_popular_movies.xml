@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.fragments.popular_movies_fragment.PopularMoviesFragment">
+        tools:context=".ui.popular_movies_fragment.PopularMoviesFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/popular_movies_recycler_view"

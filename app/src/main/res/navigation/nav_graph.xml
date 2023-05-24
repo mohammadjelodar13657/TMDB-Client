@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/popularMovies"
-        android:name="com.example.tmdbclient.ui.fragments.popular_movies_fragment.PopularMoviesFragment"
+        android:name="com.example.tmdbclient.ui.popular_movies_fragment.PopularMoviesFragment"
         android:label="PopularMoviesFragment"
         tools:layout="@layout/fragment_popular_movies" >
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/upcomingMovies"
-        android:name="com.example.tmdbclient.ui.fragments.upcoming_movie_fragment.UpcomingMovieFragment"
+        android:name="com.example.tmdbclient.ui.upcoming_movie_fragment.UpcomingMovieFragment"
         android:label="UpcomingMovieFragment"
         tools:layout="@layout/fragment_upcoming_movie">
         <action
@@ -33,12 +33,12 @@
     </fragment>
     <fragment
         android:id="@+id/favoriteMovies"
-        android:name="com.example.tmdbclient.ui.fragments.favorite_movies_fragmnet.FavoriteMoviesFragment"
+        android:name="com.example.tmdbclient.ui.favorite_movies_fragmnet.FavoriteMoviesFragment"
         android:label="FavoriteMoviesFragment"
         tools:layout="@layout/fragment_favorite_movies"/>
     <fragment
         android:id="@+id/movieDetailsFragment"
-        android:name="com.example.tmdbclient.ui.fragments.movie_details_fragment.MovieDetailsFragment"
+        android:name="com.example.tmdbclient.ui.movie_details_fragment.MovieDetailsFragment"
         android:label="MovieDetailsFragment"
         tools:layout="@layout/fragment_movie_details"/>
 </navigation>

@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.fragments.favorite_movies_fragmnet.FavoriteMoviesFragment">
+        tools:context=".ui.favorite_movies_fragmnet.FavoriteMoviesFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/favorite_movies_rv"

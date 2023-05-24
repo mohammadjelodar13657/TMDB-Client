@@ -1,11 +1,11 @@
-package com.example.tmdbclient.ui.fragments.favorite_movies_fragmnet
+package com.example.tmdbclient.ui.favorite_movies_fragmnet
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.tmdbclient.data.model.local.MovieEntity
-import com.example.tmdbclient.data.repository.remote.TMDBRepository
+import com.example.tmdbclient.data.TMDBRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

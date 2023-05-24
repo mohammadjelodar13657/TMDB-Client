@@ -1,4 +1,4 @@
-package com.example.tmdbclient.ui.fragments.upcoming_movie_fragment
+package com.example.tmdbclient.ui.upcoming_movie_fragment
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

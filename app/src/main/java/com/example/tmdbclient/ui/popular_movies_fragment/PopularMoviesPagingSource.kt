@@ -1,4 +1,4 @@
-package com.example.tmdbclient.ui.fragments.popular_movies_fragment
+package com.example.tmdbclient.ui.popular_movies_fragment
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
@@ -26,6 +26,5 @@ class PopularMoviesPagingSource(private val tmdbApi: TMDBApi) : PagingSource<Int
             prevKey = if (params.key == STARTING_INDEX) null else position - 1,
             nextKey = if (data.movies.isEmpty()) null else position + 1
         )
-
     }
 }

@@ -1,4 +1,4 @@
-package com.example.tmdbclient.ui.fragments.upcoming_movie_fragment
+package com.example.tmdbclient.ui.upcoming_movie_fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -16,7 +16,7 @@ import com.example.tmdbclient.data.model.remote.movie_dto.Movie
 import com.example.tmdbclient.databinding.FragmentUpcomingMovieBinding
 import com.example.tmdbclient.ui.OnMovieClickListener
 import com.example.tmdbclient.ui.SaveMovie
-import com.example.tmdbclient.ui.fragments.favorite_movies_fragmnet.FavoriteMoviesViewModel
+import com.example.tmdbclient.ui.favorite_movies_fragmnet.FavoriteMoviesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

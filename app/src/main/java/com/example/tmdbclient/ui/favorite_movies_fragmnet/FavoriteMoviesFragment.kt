@@ -1,4 +1,4 @@
-package com.example.tmdbclient.ui.fragments.favorite_movies_fragmnet
+package com.example.tmdbclient.ui.favorite_movies_fragmnet
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

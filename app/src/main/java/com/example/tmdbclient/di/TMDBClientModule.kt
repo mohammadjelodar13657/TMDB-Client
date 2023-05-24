@@ -2,10 +2,10 @@ package com.example.tmdbclient.di
 
 import android.app.Application
 import androidx.room.Room
-import com.example.tmdbclient.data.database.TMDBDataBase
+import com.example.tmdbclient.data.local.TMDBDataBase
 import com.example.tmdbclient.data.local.TMDBClientDao
 import com.example.tmdbclient.data.remote.TMDBApi
-import com.example.tmdbclient.data.repository.remote.TMDBRepository
+import com.example.tmdbclient.data.TMDBRepository
 import com.example.tmdbclient.util.Constants
 import dagger.Module
 import dagger.Provides

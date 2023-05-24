@@ -1,4 +1,4 @@
-package com.example.tmdbclient.ui
+package com.example.tmdbclient.ui.main_activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

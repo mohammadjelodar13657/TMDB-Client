@@ -1,4 +1,4 @@
-package com.example.tmdbclient.ui.fragments.favorite_movies_fragmnet
+package com.example.tmdbclient.ui.favorite_movies_fragmnet
 
 
 import android.view.LayoutInflater
@@ -11,7 +11,9 @@ import com.bumptech.glide.Glide
 import com.example.tmdbclient.data.model.local.MovieEntity
 import com.example.tmdbclient.databinding.MovieListItemBinding
 
-class FavoriteMoviesAdapter: ListAdapter<MovieEntity, FavoriteMoviesAdapter.FavoriteMoviesViewHolder>(DIFF_UTIL) {
+class FavoriteMoviesAdapter: ListAdapter<MovieEntity, FavoriteMoviesAdapter.FavoriteMoviesViewHolder>(
+    DIFF_UTIL
+) {
 
     companion object {
         val DIFF_UTIL = object : DiffUtil.ItemCallback<MovieEntity>() {

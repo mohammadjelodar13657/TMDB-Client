@@ -1,4 +1,4 @@
-package com.example.tmdbclient.ui.fragments.popular_movies_fragment
+package com.example.tmdbclient.ui.popular_movies_fragment
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -12,7 +12,9 @@ import com.example.tmdbclient.ui.OnMovieClickListener
 import com.example.tmdbclient.ui.SaveMovie
 
 class PopularMoviesAdapter(private val onMovieClickListener: OnMovieClickListener,
-                           private val saveMovie: SaveMovie): ListAdapter<Movie, PopularMoviesAdapter.PopularMoviesViewHolder>(DIFF_UTIL) {
+                           private val saveMovie: SaveMovie): ListAdapter<Movie, PopularMoviesAdapter.PopularMoviesViewHolder>(
+    DIFF_UTIL
+) {
 
     companion object {
         val DIFF_UTIL = object : DiffUtil.ItemCallback<Movie>() {

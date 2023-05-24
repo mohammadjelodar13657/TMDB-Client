@@ -1,4 +1,4 @@
-package com.example.tmdbclient.ui.fragments.upcoming_movie_fragment
+package com.example.tmdbclient.ui.upcoming_movie_fragment
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.tmdbclient.data.model.local.MovieEntity
 import com.example.tmdbclient.data.model.remote.movie_dto.Movie
-import com.example.tmdbclient.data.repository.remote.TMDBRepository
+import com.example.tmdbclient.data.TMDBRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
